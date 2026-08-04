@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaction Database · Cooper Union Chem-E-Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="reactions">
+
+<nav>
+  <a class="nav-brand" href="index.html">CU<span>·</span>CHEM-E-CAR</a>
+  <div class="nav-links">
+    <a href="designs.html">Designs</a>
+    <a class="here" href="reactions.html">Reactions</a>
+    <a href="safety.html">Safety</a>
+    <a href="reports.html">Reports</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="crumb"><a href="index.html">Archive</a> / <span>Reaction database</span></div>
+  <h1>Every reaction we’ve run, tested, or retired.</h1>
+  <p class="page-lede">Power sources move the car; stopping reactions kill the motor. Status tells you how much to trust each one: <em>proven</em> has raced, <em>experimental</em> is bench-only, <em>retired</em> means we learned why not — read the note before repeating history.</p>
+</header>
+
+<!-- Filter buttons: JS toggles .hidden on cards by data-cat / data-status -->
+<div class="filters" role="group" aria-label="Filter reactions">
+  <button class="filter active" data-filter="all">All</button>
+  <button class="filter" data-filter="power">Power sources</button>
+  <button class="filter" data-filter="stop">Stopping mechanisms</button>
+  <button class="filter" data-filter="proven">Proven</button>
+  <button class="filter" data-filter="experimental">Experimental</button>
+  <button class="filter" data-filter="retired">Retired</button>
+</div>
+
+<main>
+  <div class="rx-grid">
+
+    <article class="rx reveal" data-tags="stop proven">
+      <div class="badges"><span class="badge stop">Stop</span><span class="badge proven">Proven</span></div>
+      <h2>Iodine clock (thiosulfate)</h2>
+      <div class="eqn">2 S₂O₃²⁻ + I₂ → S₄O₆²⁻ + 2 I⁻  ·  then starch + I₂ → dark</div>
+      <p>Our workhorse. Solution goes dark when thiosulfate runs out; a photoresistor sees the change and opens the motor relay. Stop time scales with [S₂O₃²⁻] — the calibration curve is linear over our range.</p>
+      <div class="meta">Cars: <b>II, III, IV</b> · Calibrate at <b>venue temperature</b> — see 2025 post-mortem</div>
+    </article>
+
+    <article class="rx reveal" data-tags="power proven">
+      <div class="badges"><span class="badge power">Power</span><span class="badge proven">Proven</span></div>
+      <h2>Zn/Cu galvanic stack</h2>
+      <div class="eqn">Zn + Cu²⁺ → Zn²⁺ + Cu  ·  E°cell ≈ 1.10 V</div>
+      <p>Reliable and boring in the best way. Six cells in series gave stable voltage under load for the full run window. Heavy, though — the sulfate solutions are most of Car III's mass.</p>
+      <div class="meta">Cars: <b>II, III</b> · ~<b>1.0 V/cell</b> under load</div>
+    </article>
+
+    <article class="rx reveal" data-tags="power experimental">
+      <div class="badges"><span class="badge power">Power</span><span class="badge experimental">Experimental</span></div>
+      <h2>Aluminum–air battery</h2>
+      <div class="eqn">4 Al + 3 O₂ + 6 H₂O → 4 Al(OH)₃  ·  E°cell ≈ 2.7 V (theor.)</div>
+      <p>Much better energy density than Zn/Cu, which is the whole pitch for Car IV. Real cell voltage sags well below theoretical and the anodes passivate — current bench work is on electrolyte choice and mesh cathodes.</p>
+      <div class="meta">Car: <b>IV (current)</b> · Bench best: <b>~1.2 V/cell</b> under load</div>
+    </article>
+
+    <article class="rx reveal" data-tags="stop experimental">
+      <div class="badges"><span class="badge stop">Stop</span><span class="badge experimental">Experimental</span></div>
+      <h2>Vitamin C clock</h2>
+      <div class="eqn">ascorbic acid + I₂ → dehydroascorbic + 2 HI</div>
+      <p>A gentler iodine clock variant using ascorbic acid as the reducing agent — cheaper reagents, friendlier EHS profile. Timing is less sharp than thiosulfate so far; the color transition is more gradual, which the photocell dislikes.</p>
+      <div class="meta">Status: <b>bench only</b> · Needs a threshold circuit, not a simple divider</div>
+    </article>
+
+    <article class="rx reveal" data-tags="power retired">
+      <div class="badges"><span class="badge power">Power</span><span class="badge retired">Retired</span></div>
+      <h2>Pressure car (baking soda + vinegar)</h2>
+      <div class="eqn">NaHCO₃ + CH₃COOH → CO₂↑ + H₂O + NaOAc</div>
+      <p>Car I's propulsion. Fun, fast, wildly inconsistent — pressure release depends on mixing, temperature, and luck. Also increasingly constrained by competition pressure-vessel rules. Retired, not forgotten.</p>
+      <div class="meta">Car: <b>I</b> · Retired <b>2023</b> · Reason: <b>repeatability + rules</b></div>
+    </article>
+
+    <article class="rx reveal" data-tags="stop retired">
+      <div class="badges"><span class="badge stop">Stop</span><span class="badge retired">Retired</span></div>
+      <h2>Mechanical timer stop</h2>
+      <div class="eqn">no reaction — wind-up timer opens the circuit</div>
+      <p>Not a reaction at all, which is exactly why it's retired: competition scoring rewards chemical stopping mechanisms, and the timer drifted with spring tension anyway. Kept here so nobody re-proposes it in year one.</p>
+      <div class="meta">Car: <b>I</b> · Retired <b>2023</b></div>
+    </article>
+
+  </div>
+  <p class="empty" id="empty">// nothing matches that filter yet — add the first one</p>
+  <p class="hint reveal">// To add a reaction: copy an &lt;article class="rx"&gt; block and set data-tags to a category (power/stop) plus a status (proven/experimental/retired). The filters pick it up automatically.</p>
+</main>
+
+<footer>
+  <div>© 2026 Cooper Union Chem-E-Car · AIChE Student Chapter</div>
+  <div><a href="index.html">← Back to the hub</a></div>
+</footer>
+
+<script>
+/* scroll reveal — same mechanic as the hub */
+const observer = new IntersectionObserver((entries) => {
+  let stagger = 0;
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (stagger * 90) + "ms";
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+      stagger++;
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+/* filtering: one active filter at a time; cards carry space-separated
+   tags in data-tags, so "power" matches power cards, "proven" matches
+   proven cards, etc. */
+const buttons = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".rx");
+const empty = document.getElementById("empty");
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    buttons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const f = btn.dataset.filter;
+    let shown = 0;
+    cards.forEach((card) => {
+      const match = f === "all" || card.dataset.tags.split(" ").includes(f);
+      card.classList.toggle("hidden", !match);
+      if (match) shown++;
+    });
+    empty.style.display = shown === 0 ? "block" : "none";
+  });
+});
+</script>
+</body>
+</html>

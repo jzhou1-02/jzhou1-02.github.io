@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Designs · Cooper Union Chem-E-Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="designs">
+
+<nav>
+  <a class="nav-brand" href="index.html">CU<span>·</span>CHEM-E-CAR</a>
+  <div class="nav-links">
+    <a class="here" href="designs.html">Designs</a>
+    <a href="reactions.html">Reactions</a>
+    <a href="safety.html">Safety</a>
+    <a href="reports.html">Reports</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="crumb"><a href="index.html">Archive</a> / <span>Past designs</span></div>
+  <h1>Every car, every spec, every file.</h1>
+  <p class="page-lede">The full design record: chassis drawings, CAD, power source specs, and the design reports we submitted. If you're starting a new build, read the newest report first — it ends with what we'd do differently.</p>
+</header>
+
+<main>
+  <article class="car reveal">
+    <div class="car-top">
+      <h2>Car IV — “Peter Cooper’s Revenge”</h2>
+      <div class="yr">2026 · CURRENT BUILD</div>
+    </div>
+    <p class="car-note">Aluminum–air primary battery driving a geared DC motor, with an iodine clock photocell circuit as the stopping mechanism. In calibration now — spec sheet updates as we test.</p>
+    <dl class="specs">
+      <div class="spec"><dt>Power source</dt><dd>Al–air battery<small>4-cell stack, ~4.8 V open circuit</small></dd></div>
+      <div class="spec"><dt>Stopping mechanism</dt><dd>Iodine clock<small>photoresistor kills motor relay</small></dd></div>
+      <div class="spec"><dt>Chassis</dt><dd>Laser-cut acrylic<small>3-wheel, rear differential</small></dd></div>
+      <div class="spec"><dt>Mass</dt><dd>1.9 kg<small>with full reagent load</small></dd></div>
+      <div class="spec"><dt>Best run</dt><dd>— <small>calibration in progress</small></dd></div>
+    </dl>
+    <div class="files">
+      <a class="file" href="#">CAD.zip</a>
+      <a class="file" href="#">design-report-2026.pdf</a>
+      <a class="file" href="#">calibration-data.xlsx</a>
+      <a class="file missing" href="#">competition-poster — not yet</a>
+    </div>
+  </article>
+
+  <article class="car reveal">
+    <div class="car-top">
+      <h2>Car III</h2>
+      <div class="yr">2025</div>
+    </div>
+    <p class="car-note">Zinc–copper galvanic stack. Drove straight and consistent, but stopped long at regionals — the post-mortem traced it to temperature sensitivity in the thiosulfate concentration. The fix (calibrating at venue temperature) is now standard procedure.</p>
+    <dl class="specs">
+      <div class="spec"><dt>Power source</dt><dd>Zn/Cu galvanic<small>6-cell, CuSO₄ / ZnSO₄</small></dd></div>
+      <div class="spec"><dt>Stopping mechanism</dt><dd>Iodine clock<small>first photocell version</small></dd></div>
+      <div class="spec"><dt>Chassis</dt><dd>Aluminum frame<small>4-wheel, direct drive</small></dd></div>
+      <div class="spec"><dt>Mass</dt><dd>2.4 kg</dd></div>
+      <div class="spec"><dt>Best run</dt><dd>+1.8 m<small>overshoot at regionals</small></dd></div>
+    </dl>
+    <div class="files">
+      <a class="file" href="#">CAD.zip</a>
+      <a class="file" href="#">design-report-2025.pdf</a>
+      <a class="file" href="#">post-mortem-2025.pdf</a>
+    </div>
+  </article>
+
+  <article class="car reveal">
+    <div class="car-top">
+      <h2>Car II</h2>
+      <div class="yr">2024</div>
+    </div>
+    <p class="car-note">The first build to use a reaction-timed stop instead of a mechanical timer. Its calibration curve — stop time vs. thiosulfate concentration — still anchors the model every car since has used.</p>
+    <dl class="specs">
+      <div class="spec"><dt>Power source</dt><dd>Zn/Cu galvanic<small>4-cell</small></dd></div>
+      <div class="spec"><dt>Stopping mechanism</dt><dd>Iodine clock<small>first implementation</small></dd></div>
+      <div class="spec"><dt>Chassis</dt><dd>3D-printed PLA</dd></div>
+      <div class="spec"><dt>Mass</dt><dd>1.6 kg</dd></div>
+      <div class="spec"><dt>Best run</dt><dd>−0.9 m<small>undershoot, home track</small></dd></div>
+    </dl>
+    <div class="files">
+      <a class="file" href="#">design-report-2024.pdf</a>
+      <a class="file" href="#">calibration-curve-2024.xlsx</a>
+      <a class="file missing" href="#">CAD — lost with a graduating laptop. This is why the archive exists.</a>
+    </div>
+  </article>
+
+  <p class="hint reveal">// To add a car: copy any &lt;article class="car"&gt; block, edit the specs, and drop the real files in a /files folder in the repo.</p>
+</main>
+
+<footer>
+  <div>© 2026 Cooper Union Chem-E-Car · AIChE Student Chapter</div>
+  <div><a href="index.html" style="color:var(--muted)">← Back to the hub</a></div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  let stagger = 0;
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (stagger * 90) + "ms";
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+      stagger++;
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>

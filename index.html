@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooper Union Chem-E-Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="home">
+
+<nav>
+  <a class="nav-brand" href="#top">CU<span>·</span>CHEM-E-CAR</a>
+  <div class="nav-links">
+    <a href="designs.html">Designs</a>
+    <a href="reactions.html">Reactions</a>
+    <a href="safety.html">Safety</a>
+    <a href="reports.html">Reports</a>
+    <a href="#join">Join</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="reveal visible">
+    <div class="hero-eyebrow">Cooper Union · AIChE Chem-E-Car</div>
+    <h1>We build cars that run on <em>chemistry</em> — and stop on cue.</h1>
+    <p class="lede">A shoebox-sized vehicle, a chemical power source, and a reaction-timed stopping mechanism. No brakes, no remote — just stoichiometry, calibration, and nerve.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#archive">Open the archive</a>
+      <a class="btn btn-ghost" href="#join">Join the team</a>
+    </div>
+  </div>
+  <div class="cell-wrap">
+    <canvas id="cell" width="880" height="880" aria-label="Interactive rotating reaction cell — move your cursor to spin it"></canvas>
+    <div class="cell-caption">reaction cell · drag or hover to rotate</div>
+  </div>
+</header>
+
+<!-- ================= FACT STRIP ================= -->
+<div class="strip">
+  <div class="reveal"><div class="num">±0.5 m</div><div class="lbl">Target stopping precision</div></div>
+  <div class="reveal"><div class="num">15–30 m</div><div class="lbl">Distance revealed at competition</div></div>
+  <div class="reveal"><div class="num">0</div><div class="lbl">Brakes allowed</div></div>
+  <div class="reveal"><div class="num">1 hr</div><div class="lbl">To calibrate after the reveal</div></div>
+</div>
+
+<!-- ================= GLOW / ARCHIVE ================= -->
+<section class="archive" id="archive">
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="inner">
+    <div class="eyebrow reveal">Institutional knowledge</div>
+    <h2 class="reveal">Everything the team has ever learned, in one place.</h2>
+    <p class="section-lede reveal">Teams forget faster than they learn — seniors graduate and take the calibration curves with them. The archive is how we stop that. Every design doc, EHS form, and failed idea lives here.</p>
+    <div class="card-grid">
+      <a class="card reveal" href="designs.html">
+        <span class="glyph">[Zn/Cu]</span>
+        <h3>Past designs</h3>
+        <p>CAD files, chassis drawings, and full design reports from every car we've entered.</p>
+      </a>
+      <a class="card reveal" href="reactions.html">
+        <span class="glyph">[I₂ + S₂O₃²⁻]</span>
+        <h3>Reaction database</h3>
+        <p>Power sources and stopping mechanisms we've tested, with calibration data and what went wrong.</p>
+      </a>
+      <a class="card reveal" href="safety.html">
+        <span class="glyph">[EHS]</span>
+        <h3>Safety &amp; compliance</h3>
+        <p>Safety data sheets, EHS submission templates, and the competition rulebook, updated yearly.</p>
+      </a>
+      <a class="card reveal" href="reports.html">
+        <span class="glyph">[LOG]</span>
+        <h3>Competition reports</h3>
+        <p>Post-mortems from every regional and national run — the honest kind, including the pole-hit of legend.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAST CARS ================= -->
+<section id="cars">
+  <div class="eyebrow reveal">The garage</div>
+  <h2 class="reveal">Past cars</h2>
+  <p class="section-lede reveal">Each generation of the car teaches the next one. Replace these entries with your real history — this is placeholder structure.</p>
+  <div class="timeline">
+    <div class="entry reveal">
+      <div class="yr">2026 · CURRENT BUILD</div>
+      <h3>Car IV — “Peter Cooper’s Revenge”</h3>
+      <p>Aluminum–air battery drivetrain with an iodine clock stopping circuit. Currently in calibration; targeting the Mid-Atlantic regional.</p>
+      <div class="tags"><span class="tag">Al-air</span><span class="tag">iodine clock</span><span class="tag">in progress</span></div>
+    </div>
+    <div class="entry reveal">
+      <div class="yr">2025</div>
+      <h3>Car III</h3>
+      <p>Zinc–copper galvanic stack. Ran true but stopped long — post-mortem traced it to temperature sensitivity in the thiosulfate concentration.</p>
+      <div class="tags"><span class="tag">Zn/Cu</span><span class="tag">regional</span></div>
+    </div>
+    <div class="entry reveal">
+      <div class="yr">2024</div>
+      <h3>Car II</h3>
+      <p>First year running a reaction-timed stop instead of a mechanical timer. The calibration curve from this build still anchors our current model.</p>
+      <div class="tags"><span class="tag">first clock stop</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN ================= -->
+<section class="join" id="join">
+  <div class="eyebrow reveal">Open to all majors</div>
+  <h2 class="reveal">The best way to learn ChemE is to race it.</h2>
+  <p class="section-lede reveal">Weekly build sessions in the lab. No experience needed — first-years calibrate their first iodine clock within a month.</p>
+  <a class="btn btn-primary reveal" href="mailto:chemecar@cooper.edu">Email the captain</a>
+</section>
+
+<footer>
+  <div>© 2026 Cooper Union Chem-E-Car · AIChE Student Chapter</div>
+  <div>Built by the team, for the team.</div>
+</footer>
+
+<script>
+/* ==============================================================
+   1) SCROLL REVEALS — the GitHub scroll effect.
+   IntersectionObserver watches every .reveal element. When one
+   is ~15% into the viewport, we add .visible and the CSS
+   transition animates it in. Staggering: siblings that arrive
+   in the same batch get an increasing transition-delay.
+   ============================================================== */
+const observer = new IntersectionObserver((entries) => {
+  let stagger = 0;
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (stagger * 90) + "ms";
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target); // animate once, then stop watching
+      stagger++;
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+/* ==============================================================
+   2) PARTICLES — the "purple sparkle" layer.
+   A canvas of small glowing dots drifting slowly upward, like
+   bubbles or chemiluminescent flecks. The glow comes from
+   'lighter' compositing + radial gradients per particle.
+   ============================================================== */
+const pCanvas = document.getElementById("particles");
+const pCtx = pCanvas.getContext("2d");
+let particles = [];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function sizeParticles() {
+  const rect = pCanvas.parentElement.getBoundingClientRect();
+  pCanvas.width = rect.width;
+  pCanvas.height = rect.height;
+  const count = Math.min(90, Math.floor(rect.width / 14));
+  particles = Array.from({ length: count }, () => ({
+    x: Math.random() * pCanvas.width,
+    y: Math.random() * pCanvas.height,
+    r: 0.6 + Math.random() * 1.8,          // radius
+    vy: 0.08 + Math.random() * 0.25,        // upward drift speed
+    tw: Math.random() * Math.PI * 2,        // twinkle phase
+    hue: Math.random() < 0.75 ? "167,139,250" : "103,232,249" // violet or cyan
+  }));
+}
+
+function drawParticles(t) {
+  pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+  pCtx.globalCompositeOperation = "lighter"; // overlapping glows add up
+  for (const p of particles) {
+    p.y -= p.vy;
+    if (p.y < -6) { p.y = pCanvas.height + 6; p.x = Math.random() * pCanvas.width; }
+    const alpha = 0.25 + 0.55 * (0.5 + 0.5 * Math.sin(t / 900 + p.tw)); // twinkle
+    const g = pCtx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5);
+    g.addColorStop(0, `rgba(${p.hue},${alpha})`);
+    g.addColorStop(1, `rgba(${p.hue},0)`);
+    pCtx.fillStyle = g;
+    pCtx.beginPath();
+    pCtx.arc(p.x, p.y, p.r * 5, 0, Math.PI * 2);
+    pCtx.fill();
+  }
+  if (!reduceMotion) requestAnimationFrame(drawParticles);
+}
+
+sizeParticles();
+window.addEventListener("resize", sizeParticles);
+requestAnimationFrame(drawParticles);
+
+/* ==============================================================
+   3) THE INTERACTIVE "REACTION CELL" — the Vercel-triangle idea.
+   A hexagonal prism (think benzene ring / electrochemical cell)
+   defined as 3D points, rotated by angles that chase the cursor,
+   projected to 2D with simple perspective, drawn as glowing
+   wireframe. No libraries — this is the whole trick:
+     rotate → project → draw, every animation frame,
+     with lerp() smoothing so the motion feels physical.
+   ============================================================== */
+const cCanvas = document.getElementById("cell");
+const ctx = cCanvas.getContext("2d");
+const SIZE = cCanvas.width; // internal resolution (square)
+
+// Build the hexagonal prism vertices: two hexagon rings, z = ±depth
+const verts = [];
+const R = SIZE * 0.30, depth = SIZE * 0.13;
+for (let ring = 0; ring < 2; ring++) {
+  for (let i = 0; i < 6; i++) {
+    const a = (Math.PI / 3) * i + Math.PI / 6;
+    verts.push({ x: R * Math.cos(a), y: R * Math.sin(a), z: ring === 0 ? -depth : depth });
+  }
+}
+// Edges: each ring's perimeter + the six struts between rings
+const edges = [];
+for (let i = 0; i < 6; i++) {
+  edges.push([i, (i + 1) % 6]);           // top ring
+  edges.push([i + 6, ((i + 1) % 6) + 6]); // bottom ring
+  edges.push([i, i + 6]);                 // struts
+}
+
+// target angles follow the pointer; current angles chase them
+let targetRX = -0.4, targetRY = 0.6;
+let rx = targetRX, ry = targetRY;
+let dragging = false, lastX = 0, lastY = 0, idleSpin = true;
+
+function pointerMove(clientX, clientY) {
+  const rect = cCanvas.getBoundingClientRect();
+  // map cursor position across the canvas to a rotation range
+  const nx = (clientX - rect.left) / rect.width - 0.5;  // -0.5 .. 0.5
+  const ny = (clientY - rect.top) / rect.height - 0.5;
+  targetRY = nx * 2.4;
+  targetRX = ny * -2.4;
+  idleSpin = false;
+}
+
+cCanvas.addEventListener("pointermove", (e) => {
+  if (dragging) {
+    targetRY += (e.clientX - lastX) * 0.012;
+    targetRX += (e.clientY - lastY) * 0.012;
+    lastX = e.clientX; lastY = e.clientY;
+    idleSpin = false;
+  } else {
+    pointerMove(e.clientX, e.clientY);
+  }
+});
+cCanvas.addEventListener("pointerdown", (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
+window.addEventListener("pointerup", () => { dragging = false; });
+cCanvas.addEventListener("pointerleave", () => { if (!dragging) idleSpin = true; });
+
+const lerp = (a, b, t) => a + (b - a) * t; // smooth chase
+
+function project(v, rx, ry) {
+  // rotate around Y, then X
+  let x = v.x * Math.cos(ry) + v.z * Math.sin(ry);
+  let z = -v.x * Math.sin(ry) + v.z * Math.cos(ry);
+  let y = v.y * Math.cos(rx) - z * Math.sin(rx);
+  z = v.y * Math.sin(rx) + z * Math.cos(rx);
+  // perspective divide: things farther away (larger z) shrink
+  const persp = SIZE * 1.1 / (SIZE * 1.1 + z);
+  return { x: SIZE / 2 + x * persp, y: SIZE / 2 + y * persp, z, s: persp };
+}
+
+function drawCell(t) {
+  ctx.clearRect(0, 0, SIZE, SIZE);
+  if (idleSpin && !reduceMotion) targetRY += 0.004; // gentle spin when idle
+  rx = lerp(rx, targetRX, 0.07);
+  ry = lerp(ry, targetRY, 0.07);
+
+  const pts = verts.map((v) => project(v, rx, ry));
+
+  // edges — glow via shadowBlur, opacity by depth
+  ctx.lineCap = "round";
+  for (const [a, b] of edges) {
+    const A = pts[a], B = pts[b];
+    const nearness = Math.max(0, 1 - (A.z + B.z) / (2 * depth * 2.2)); // 0..~1
+    ctx.strokeStyle = `rgba(167, 139, 250, ${0.35 + 0.55 * Math.min(1, nearness)})`;
+    ctx.lineWidth = 2.4 * ((A.s + B.s) / 2);
+    ctx.shadowColor = "rgba(124, 92, 240, 0.9)";
+    ctx.shadowBlur = 22;
+    ctx.beginPath();
+    ctx.moveTo(A.x, A.y);
+    ctx.lineTo(B.x, B.y);
+    ctx.stroke();
+  }
+
+  // vertices — cyan "electrons"
+  ctx.shadowColor = "rgba(103, 232, 249, 0.9)";
+  ctx.shadowBlur = 16;
+  for (const p of pts) {
+    ctx.fillStyle = `rgba(103, 232, 249, ${0.5 + 0.5 * p.s})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 4.6 * p.s, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  // one electron orbiting the ring, because chemistry
+  if (!reduceMotion) {
+    const oa = t / 700;
+    const orbit = project({ x: R * 1.18 * Math.cos(oa), y: R * 1.18 * Math.sin(oa), z: 0 }, rx, ry);
+    ctx.fillStyle = "rgba(103, 232, 249, 0.95)";
+    ctx.beginPath();
+    ctx.arc(orbit.x, orbit.y, 5.5 * orbit.s, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  ctx.shadowBlur = 0;
+  requestAnimationFrame(drawCell);
+}
+requestAnimationFrame(drawCell);
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competition Reports · Cooper Union Chem-E-Car</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="reports">
+
+<nav>
+  <a class="nav-brand" href="index.html">CU<span>·</span>CHEM-E-CAR</a>
+  <div class="nav-links">
+    <a href="designs.html">Designs</a>
+    <a href="reactions.html">Reactions</a>
+    <a href="safety.html">Safety</a>
+    <a class="here" href="reports.html">Reports</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="crumb"><a href="index.html">Archive</a> / <span>Competition reports</span></div>
+  <h1>What actually happened at the line.</h1>
+  <p class="page-lede">Every event, written up honestly within a week while memory is fresh: what worked, what broke, and the one thing the next captain needs to carry forward. The distance error is the headline number — everything else explains it.</p>
+</header>
+
+<main>
+
+  <article class="report reveal">
+    <div class="report-top">
+      <h2>Mid-Atlantic Regional</h2>
+      <div class="when">APR 2025 · CAR III</div>
+    </div>
+    <dl class="result">
+      <div><dt>Assigned distance</dt><dd>19.5 m</dd></div>
+      <div><dt>Actual stop</dt><dd>21.3 m</dd></div>
+      <div><dt>Error</dt><dd class="err">+1.8 m</dd></div>
+      <div><dt>Placement</dt><dd>7th / 14</dd></div>
+    </dl>
+    <div class="cols">
+      <div class="col worked">
+        <h3>What worked</h3>
+        <ul>
+          <li>Car drove dead straight — the rear differential fix from winter held</li>
+          <li>EHS review passed first round, zero reviewer comments</li>
+          <li>Calibration workflow finished with 12 minutes to spare</li>
+          <li>Voltage stayed stable across both runs — Zn/Cu stack was never the problem</li>
+        </ul>
+      </div>
+      <div class="col broke">
+        <h3>What broke</h3>
+        <ul>
+          <li>Stopped 1.8 m long on both runs, consistent direction — systematic, not random</li>
+          <li>Venue gym was ~8 °C colder than our lab; iodine clock ran slow</li>
+          <li>Our calibration curve had no temperature term at all</li>
+          <li>No thermometer in the kit, so we couldn't even quantify it on-site</li>
+        </ul>
+      </div>
+    </div>
+    <div class="carry"><b>Carry forward</b>Calibrate at venue temperature, or build the temperature correction into the curve. A thermometer is now permanently in the competition kit.</div>
+  </article>
+
+  <article class="report reveal">
+    <div class="report-top">
+      <h2>Home track trials</h2>
+      <div class="when">NOV 2024 · CAR II</div>
+    </div>
+    <dl class="result">
+      <div><dt>Assigned distance</dt><dd>15.0 m</dd></div>
+      <div><dt>Actual stop</dt><dd>14.1 m</dd></div>
+      <div><dt>Error</dt><dd class="err">−0.9 m</dd></div>
+      <div><dt>Placement</dt><dd>trial run</dd></div>
+    </dl>
+    <div class="cols">
+      <div class="col worked">
+        <h3>What worked</h3>
+        <ul>
+          <li>First successful reaction-timed stop — the iodine clock concept is proven</li>
+          <li>Photoresistor circuit triggered cleanly on the color change</li>
+          <li>Calibration curve was linear across the tested concentration range</li>
+        </ul>
+      </div>
+      <div class="col broke">
+        <h3>What broke</h3>
+        <ul>
+          <li>Undershoot traced to wheel slip on the gym floor at launch</li>
+          <li>Reagent mixing procedure varied by operator — needed a written protocol</li>
+          <li>One run lost entirely to a loose relay wire</li>
+        </ul>
+      </div>
+    </div>
+    <div class="carry"><b>Carry forward</b>Write the mixing protocol down and assign one calibrator per event. Distance error has two parts — reaction timing AND drivetrain repeatability — and they must be characterized separately.</div>
+  </article>
+
+  <article class="report reveal">
+    <div class="report-top">
+      <h2>First outing (the pole-hit of legend)</h2>
+      <div class="when">APR 2023 · CAR I</div>
+    </div>
+    <dl class="result">
+      <div><dt>Assigned distance</dt><dd>17.0 m</dd></div>
+      <div><dt>Actual stop</dt><dd>a pole</dd></div>
+      <div><dt>Error</dt><dd class="err">n/a</dd></div>
+      <div><dt>Placement</dt><dd>DNF</dd></div>
+    </dl>
+    <div class="cols">
+      <div class="col worked">
+        <h3>What worked</h3>
+        <ul>
+          <li>The car moved, which at the time felt like a miracle</li>
+          <li>Team morale, somehow</li>
+        </ul>
+      </div>
+      <div class="col broke">
+        <h3>What broke</h3>
+        <ul>
+          <li>Pressure propulsion was a different car every run — repeatability near zero</li>
+          <li>Mechanical timer drifted with spring tension</li>
+          <li>Steering had no trim adjustment; it veered left and met the pole</li>
+        </ul>
+      </div>
+    </div>
+    <div class="carry"><b>Carry forward</b>Repeatability beats power. Everything since — galvanic cells, reaction-timed stops, calibration culture — descends from this one bad afternoon.</div>
+  </article>
+
+  <p class="hint reveal">// Write the report within a week of the event, while it still stings. The "carry forward" line is the only part future teams reliably read — make it count.</p>
+</main>
+
+<footer>
+  <div>© 2026 Cooper Union Chem-E-Car · AIChE Student Chapter</div>
+  <div><a href="index.html">← Back to the hub</a></div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  let stagger = 0;
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (stagger * 90) + "ms";
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+      stagger++;
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
