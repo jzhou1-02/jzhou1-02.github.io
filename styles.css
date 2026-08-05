@@ -273,6 +273,42 @@ footer a { color: var(--muted); }
 }
 .home .section-lede { color: var(--muted); max-width: 58ch; margin-bottom: 56px; }
 
+/* ---------- PARALLAX BAND ----------
+   The photo sits in a position:fixed layer so it holds still while
+   the page moves. clip-path: inset(0) on the band makes the fixed
+   child clip to the band's box (the same trick as
+   background-attachment: fixed, but reliable on mobile), so the
+   next section — which has an opaque background — scrolls over it
+   and covers it up. */
+.home .parallax {
+  position: relative;
+  clip-path: inset(0);
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 8vw 12vh;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.home .parallax-media {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    /* black wash so the photo reads as texture, not a bright block */
+    linear-gradient(rgba(10, 11, 16, 0.62), rgba(10, 11, 16, 0.62)),
+    /* feather the top and bottom edges into the page ink */
+    linear-gradient(to bottom, var(--ink) 0%, rgba(10, 11, 16, 0) 22% 78%, var(--ink) 100%),
+    url("IMG_0664.jpeg");
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+  filter: saturate(0.72) contrast(1.02);
+}
+.home .parallax-inner { position: relative; z-index: 1; }
+.home .parallax-inner h2 { margin-bottom: 0; max-width: 18ch; text-shadow: 0 2px 30px rgba(10, 11, 16, 0.85); }
+.home .parallax-inner .eyebrow { color: var(--chemilum); }
+
 /* the glow section: haze (::before/::after) + particles + cards */
 .home .archive { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
 .home .archive::before, .home .archive::after {

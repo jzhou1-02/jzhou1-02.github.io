@@ -21,7 +21,7 @@
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
+<!-- hero -->
 <header class="hero" id="top">
   <div class="reveal visible">
     <div class="hero-eyebrow">Cooper Union · AIChE Chem-E-Car</div>
@@ -34,11 +34,11 @@
   </div>
   <div class="cell-wrap">
     <canvas id="cell" width="880" height="880" aria-label="Interactive rotating reaction cell — move your cursor to spin it"></canvas>
-    <div class="cell-caption">reaction cell · drag or hover to rotate</div>
+    <div class="cell-caption">This is Ben the Benzene · He won't bite</div>
   </div>
 </header>
 
-<!-- ================= FACT STRIP ================= -->
+<!--fact strip -->
 <div class="strip">
   <div class="reveal"><div class="num">±0.5 m</div><div class="lbl">Target stopping precision</div></div>
   <div class="reveal"><div class="num">15–30 m</div><div class="lbl">Distance revealed at competition</div></div>
@@ -46,13 +46,22 @@
   <div class="reveal"><div class="num">1 hr</div><div class="lbl">To calibrate after the reveal</div></div>
 </div>
 
-<!-- ================= GLOW / ARCHIVE ================= -->
+<!-- photo band -->
+<section class="parallax" id="shop" aria-label="The team at work">
+  <div class="parallax-media" role="img" aria-label="Cooper Union Chem-E-Car team working on the car"></div>
+  <div class="parallax-inner reveal">
+    <div class="eyebrow">In the lab</div>
+    <h2>Built by hand, by the indomitable [Cooper] Spirit.</h2>
+  </div>
+</section>
+
+
 <section class="archive" id="archive">
   <canvas id="particles" aria-hidden="true"></canvas>
   <div class="inner">
     <div class="eyebrow reveal">Institutional knowledge</div>
     <h2 class="reveal">Everything the team has ever learned, in one place.</h2>
-    <p class="section-lede reveal">Teams forget faster than they learn — seniors graduate and take the calibration curves with them. The archive is how we stop that. Every design doc, EHS form, and failed idea lives here.</p>
+    <p class="section-lede reveal">Yes, we sometimes forget what we've learned. Seniors graduate and knowledge leaves with them. Now however, every idea, reaction, design doc, EDP form, MOC form and CAD file lives here.</p>
     <div class="card-grid">
       <a class="card reveal" href="designs.html">
         <span class="glyph">[Zn/Cu]</span>
@@ -62,55 +71,55 @@
       <a class="card reveal" href="reactions.html">
         <span class="glyph">[I₂ + S₂O₃²⁻]</span>
         <h3>Reaction database</h3>
-        <p>Power sources and stopping mechanisms we've tested, with calibration data and what went wrong.</p>
+        <p>Power sources and stopping mechanisms we've tested, with calibration data.</p>
       </a>
       <a class="card reveal" href="safety.html">
         <span class="glyph">[EHS]</span>
         <h3>Safety &amp; compliance</h3>
-        <p>Safety data sheets, EHS submission templates, and the competition rulebook, updated yearly.</p>
+        <p>Safety data sheets, Engineering Documentation Package and the competition rulebook.</p>
       </a>
       <a class="card reveal" href="reports.html">
         <span class="glyph">[LOG]</span>
         <h3>Competition reports</h3>
-        <p>Post-mortems from every regional and national run — the honest kind, including the pole-hit of legend.</p>
+        <p>Post-mortems from every regional and national run, the honest kind.</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ================= PAST CARS ================= -->
+<!-- garage -->
 <section id="cars">
   <div class="eyebrow reveal">The garage</div>
   <h2 class="reveal">Past cars</h2>
-  <p class="section-lede reveal">Each generation of the car teaches the next one. Replace these entries with your real history — this is placeholder structure.</p>
+  <p class="section-lede reveal">Each generation of the car is knowledge passed down to the underclassmen.</p>
   <div class="timeline">
     <div class="entry reveal">
       <div class="yr">2026 · CURRENT BUILD</div>
-      <h3>Car IV — “Peter Cooper’s Revenge”</h3>
-      <p>Aluminum–air battery drivetrain with an iodine clock stopping circuit. Currently in calibration; targeting the Mid-Atlantic regional.</p>
+      <h3>Angler Fish Build</h3>
+      <p>Battery drivetrain with an luminol clock stopping circuit. Currently in calibration; find us at the Mid-Atlantic regional.</p>
       <div class="tags"><span class="tag">Al-air</span><span class="tag">iodine clock</span><span class="tag">in progress</span></div>
     </div>
     <div class="entry reveal">
       <div class="yr">2025</div>
-      <h3>Car III</h3>
-      <p>Zinc–copper galvanic stack. Ran true but stopped long — post-mortem traced it to temperature sensitivity in the thiosulfate concentration.</p>
+      <h3>Cooper Model T</h3>
+      <p>Zinc–copper galvanic stack, stopped by a iodine clock reaction connected to a circuit.</p>
       <div class="tags"><span class="tag">Zn/Cu</span><span class="tag">regional</span></div>
     </div>
     <div class="entry reveal">
       <div class="yr">2024</div>
-      <h3>Car II</h3>
-      <p>First year running a reaction-timed stop instead of a mechanical timer. The calibration curve from this build still anchors our current model.</p>
+      <h3>Car something something</h3>
+      <p>pressure and luminol blah.</p>
       <div class="tags"><span class="tag">first clock stop</span></div>
     </div>
   </div>
 </section>
 
-<!-- ================= JOIN ================= -->
+<!-- JOIN  -->
 <section class="join" id="join">
   <div class="eyebrow reveal">Open to all majors</div>
   <h2 class="reveal">The best way to learn ChemE is to race it.</h2>
-  <p class="section-lede reveal">Weekly build sessions in the lab. No experience needed — first-years calibrate their first iodine clock within a month.</p>
-  <a class="btn btn-primary reveal" href="mailto:chemecar@cooper.edu">Email the captain</a>
+  <p class="section-lede reveal">Weekly build sessions in the lab. No experience needed. Join if you want to win</p>
+  <a class="btn btn-primary reveal" href="mailto:chemecar@cooper.edu">Email the captains</a>
 </section>
 
 <footer>
@@ -119,13 +128,7 @@
 </footer>
 
 <script>
-/* ==============================================================
-   1) SCROLL REVEALS — the GitHub scroll effect.
-   IntersectionObserver watches every .reveal element. When one
-   is ~15% into the viewport, we add .visible and the CSS
-   transition animates it in. Staggering: siblings that arrive
-   in the same batch get an increasing transition-delay.
-   ============================================================== */
+
 const observer = new IntersectionObserver((entries) => {
   let stagger = 0;
   entries.forEach((entry) => {
@@ -140,12 +143,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-/* ==============================================================
-   2) PARTICLES — the "purple sparkle" layer.
-   A canvas of small glowing dots drifting slowly upward, like
-   bubbles or chemiluminescent flecks. The glow comes from
-   'lighter' compositing + radial gradients per particle.
-   ============================================================== */
+/* particles */
 const pCanvas = document.getElementById("particles");
 const pCtx = pCanvas.getContext("2d");
 let particles = [];
@@ -188,20 +186,12 @@ sizeParticles();
 window.addEventListener("resize", sizeParticles);
 requestAnimationFrame(drawParticles);
 
-/* ==============================================================
-   3) THE INTERACTIVE "REACTION CELL" — the Vercel-triangle idea.
-   A hexagonal prism (think benzene ring / electrochemical cell)
-   defined as 3D points, rotated by angles that chase the cursor,
-   projected to 2D with simple perspective, drawn as glowing
-   wireframe. No libraries — this is the whole trick:
-     rotate → project → draw, every animation frame,
-     with lerp() smoothing so the motion feels physical.
-   ============================================================== */
+/* benzene ring */
 const cCanvas = document.getElementById("cell");
 const ctx = cCanvas.getContext("2d");
-const SIZE = cCanvas.width; // internal resolution (square)
+const SIZE = cCanvas.width; // internal res
 
-// Build the hexagonal prism vertices: two hexagon rings, z = ±depth
+
 const verts = [];
 const R = SIZE * 0.30, depth = SIZE * 0.13;
 for (let ring = 0; ring < 2; ring++) {
@@ -210,7 +200,7 @@ for (let ring = 0; ring < 2; ring++) {
     verts.push({ x: R * Math.cos(a), y: R * Math.sin(a), z: ring === 0 ? -depth : depth });
   }
 }
-// Edges: each ring's perimeter + the six struts between rings
+
 const edges = [];
 for (let i = 0; i < 6; i++) {
   edges.push([i, (i + 1) % 6]);           // top ring
@@ -218,7 +208,7 @@ for (let i = 0; i < 6; i++) {
   edges.push([i, i + 6]);                 // struts
 }
 
-// target angles follow the pointer; current angles chase them
+// target angles for cursor
 let targetRX = -0.4, targetRY = 0.6;
 let rx = targetRX, ry = targetRY;
 let dragging = false, lastX = 0, lastY = 0, idleSpin = true;
@@ -268,7 +258,7 @@ function drawCell(t) {
 
   const pts = verts.map((v) => project(v, rx, ry));
 
-  // edges — glow via shadowBlur, opacity by depth
+  // edges and opacity 
   ctx.lineCap = "round";
   for (const [a, b] of edges) {
     const A = pts[a], B = pts[b];
@@ -283,7 +273,7 @@ function drawCell(t) {
     ctx.stroke();
   }
 
-  // vertices — cyan "electrons"
+  // vertices and electrons
   ctx.shadowColor = "rgba(103, 232, 249, 0.9)";
   ctx.shadowBlur = 16;
   for (const p of pts) {
