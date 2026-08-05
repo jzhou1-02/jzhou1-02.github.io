@@ -23,13 +23,13 @@
 <header class="page-head">
   <div class="crumb"><a href="index.html">Archive</a> / <span>Safety &amp; compliance</span></div>
   <h1>The paperwork that lets us race.</h1>
-  <p class="page-lede">EHS review is pass/fail — a perfect car with a rejected safety packet doesn't run. Everything needed for submission lives here, plus the pre-competition checklist we run before every event.</p>
+  <p class="page-lede">EDP review is pass/fail. A perfect car with a rejected safety packet doesn't run. Everything needed for submission lives here.</p>
 </header>
 
 <main>
   <div class="reveal">
     <h2>Document index</h2>
-    <p class="sub">Templates and current-year submissions. External links open the official AIChE sources — always check those for rule changes before trusting our local copies.</p>
+    <p class="sub">Templates and current-year submissions. External links open the official AIChE sources. Always check those for rule changes!!!!</p>
     <div class="docs">
       <a class="doc" href="#">
         <span class="ft">PDF</span>
@@ -38,12 +38,12 @@
       </a>
       <a class="doc" href="#">
         <span class="ft">DOCX</span>
-        <span><span class="doc-name">EHS packet template</span><br><span class="doc-desc">Pre-filled with our standard sections — start here, don't start blank</span></span>
+        <span><span class="doc-name">EHS packet template</span><br><span class="doc-desc">Pre-filled with our standard sections. Start here!</span></span>
         <span class="upd">Feb 2026</span>
       </a>
       <a class="doc" href="#">
         <span class="ft">PDF</span>
-        <span><span class="doc-name">SDS bundle — current reagents</span><br><span class="doc-desc">Safety data sheets for everything on the Car IV reagent list</span></span>
+        <span><span class="doc-name">SDS bundle — current reagents</span><br><span class="doc-desc">Safety data sheets for everything on the Cooper Model T reagent list</span></span>
         <span class="upd">Jun 2026</span>
       </a>
       <a class="doc" href="#">
@@ -53,12 +53,12 @@
       </a>
       <a class="doc" href="https://www.aiche.org/students/awards-scholarships-competitions/chem-e-car-competitionr" target="_blank" rel="noopener">
         <span class="ft ext">LINK</span>
-        <span><span class="doc-name">Official competition rules</span><br><span class="doc-desc">AIChE Chem-E-Car rules — the source of truth, updated yearly</span></span>
+        <span><span class="doc-name">Official competition rules</span><br><span class="doc-desc">AIChE Chem-E-Car rules. Updated yearly</span></span>
         <span class="upd">aiche.org</span>
       </a>
       <a class="doc" href="#">
         <span class="ft">PDF</span>
-        <span><span class="doc-name">Lab access &amp; training log</span><br><span class="doc-desc">Who's completed Cooper EHS training — required before touching reagents</span></span>
+        <span><span class="doc-name">Lab access &amp; training log</span><br><span class="doc-desc">Who's completed Cooper EHS training and the AIChE REQUIRED training. REQUIRED FOR COMP</span></span>
         <span class="upd">rolling</span>
       </a>
     </div>
@@ -76,10 +76,10 @@
     <label class="check"><input type="checkbox"> Calibration kit: burettes, thermometer, stopwatch</label>
     <label class="check"><input type="checkbox"> Spare photoresistor + relay + wiring</label>
     <label class="check"><input type="checkbox"> Waste containers labeled for disposal rules</label>
-    <div class="note">// Checks reset on page reload — this is a run-of-show tool, not a record. Print the EHS packet; judges want paper.</div>
+    <div class="note">// Checks reset on page reload. Judges want paper.</div>
   </aside>
 
-  <p class="hint reveal">// Rule of thumb the judges repeat every year: if the EHS reviewer has to guess what a reagent is for, the answer is no.</p>
+  <p class="hint reveal">// Rule of thumb: if the EHS reviewer has to guess what a reagent is for, the answer is no.</p>
 </main>
 
 <footer>
@@ -88,7 +88,7 @@
 </footer>
 
 <script>
-/* scroll reveal — same mechanic as the hub */
+/* scroll reveal same as hub */
 const observer = new IntersectionObserver((entries) => {
   let stagger = 0;
   entries.forEach((entry) => {
@@ -102,7 +102,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-/* checklist progress bar — pure in-page state */
+/* checklist progress bar */
 const boxes = document.querySelectorAll(".check input");
 const bar = document.getElementById("bar");
 boxes.forEach((box) => {

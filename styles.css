@@ -203,7 +203,7 @@ footer a { color: var(--muted); }
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.home .hero h1 em {
+.home .hero h1 em, .home .parallax-inner h2 em {
   font-style: normal;
   background: linear-gradient(100deg, var(--luminol) 10%, var(--chemilum) 90%);
   -webkit-background-clip: text;
@@ -308,6 +308,9 @@ footer a { color: var(--muted); }
 .home .parallax-inner { position: relative; z-index: 1; }
 .home .parallax-inner h2 { margin-bottom: 0; max-width: 18ch; text-shadow: 0 2px 30px rgba(10, 11, 16, 0.85); }
 .home .parallax-inner .eyebrow { color: var(--chemilum); }
+/* the h2's text-shadow would paint on top of the clipped gradient,
+   so the highlighted word gets a drop-shadow (applied post-clip) instead */
+.home .parallax-inner h2 em { text-shadow: none; filter: drop-shadow(0 2px 18px rgba(10, 11, 16, 0.9)); }
 
 /* the glow section: haze (::before/::after) + particles + cards */
 .home .archive { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
