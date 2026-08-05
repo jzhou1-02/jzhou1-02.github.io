@@ -1,15 +1,6 @@
-/* ============================================================
-   COOPER UNION CHEM-E-CAR · SHARED STYLESHEET
-   One file, five pages. Organization:
-     1. Tokens + reset
-     2. Shared chrome (nav, page headers, footer, buttons)
-     3. Scroll-reveal mechanics
-     4. Per-page sections, scoped by a class on <body>:
-        .home / .designs / .reactions / .safety / .reports
-   To change the theme site-wide, edit the tokens at the top.
-   ============================================================ */
 
-/* ---------- 1. TOKENS + RESET ---------- */
+
+/* stylesheet  */
 :root {
   --ink: #0a0b10;          /* dark lab, lights off for the demo */
   --ink-2: #0f1119;
@@ -18,7 +9,10 @@
   --luminol: #a78bfa;      /* violet glow */
   --luminol-deep: #7c5cf0;
   --chemilum: #67e8f9;     /* cyan edge of the glow */
-  --amber: #f5b85c;        /* safety accent */
+  --amber: #f5b85c;        /*  accent */
+  --flag-red: #ff5a4e;     /* cooper gradient */
+  --flag-blue: #4f8bff;
+  --flag-yellow: #ffcf5c;
   --good: #7ee8a2;
   --bad: #f08a8a;
   --line: rgba(167, 139, 250, 0.14);
@@ -44,7 +38,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border-radius: 2px;
 }
 
-/* ---------- 2. SHARED CHROME ---------- */
+
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -76,7 +70,7 @@ nav {
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--paper); }
 .nav-links a.here { color: var(--chemilum); }
 
-/* subpage header with ambient glow carried over from the hub */
+/* subpage header with glow */
 .page-head {
   padding: 150px 8vw 60px;
   position: relative;
@@ -155,7 +149,7 @@ footer {
 }
 footer a { color: var(--muted); }
 
-/* ---------- 3. SCROLL REVEAL ---------- */
+/* scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -175,9 +169,7 @@ footer a { color: var(--muted); }
   .page-head { padding: 130px 6vw 48px; }
 }
 
-/* ============================================================
-   4a. HOME (.home) — hero, fact strip, glow archive, timeline
-   ============================================================ */
+
 .home .hero {
   min-height: 100vh;
   display: grid;
@@ -203,6 +195,7 @@ footer a { color: var(--muted); }
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
+/* shared gradient-text mechanics; each site sets its own ramp below */
 .home .hero h1 em, .home .parallax-inner h2 em {
   font-style: normal;
   background: linear-gradient(100deg, var(--luminol) 10%, var(--chemilum) 90%);
@@ -273,13 +266,7 @@ footer a { color: var(--muted); }
 }
 .home .section-lede { color: var(--muted); max-width: 58ch; margin-bottom: 56px; }
 
-/* ---------- PARALLAX BAND ----------
-   The photo sits in a position:fixed layer so it holds still while
-   the page moves. clip-path: inset(0) on the band makes the fixed
-   child clip to the band's box (the same trick as
-   background-attachment: fixed, but reliable on mobile), so the
-   next section — which has an opaque background — scrolls over it
-   and covers it up. */
+/* parallax band */
 .home .parallax {
   position: relative;
   clip-path: inset(0);
@@ -295,9 +282,9 @@ footer a { color: var(--muted); }
   inset: 0;
   z-index: 0;
   background-image:
-    /* black wash so the photo reads as texture, not a bright block */
+    /* black wash */
     linear-gradient(rgba(10, 11, 16, 0.62), rgba(10, 11, 16, 0.62)),
-    /* feather the top and bottom edges into the page ink */
+    /* feather the top and bottom  */
     linear-gradient(to bottom, var(--ink) 0%, rgba(10, 11, 16, 0) 22% 78%, var(--ink) 100%),
     url("IMG_0664.jpeg");
   background-size: cover, cover, cover;
@@ -308,9 +295,15 @@ footer a { color: var(--muted); }
 .home .parallax-inner { position: relative; z-index: 1; }
 .home .parallax-inner h2 { margin-bottom: 0; max-width: 18ch; text-shadow: 0 2px 30px rgba(10, 11, 16, 0.85); }
 .home .parallax-inner .eyebrow { color: var(--chemilum); }
-/* the h2's text-shadow would paint on top of the clipped gradient,
-   so the highlighted word gets a drop-shadow (applied post-clip) instead */
-.home .parallax-inner h2 em { text-shadow: none; filter: drop-shadow(0 2px 18px rgba(10, 11, 16, 0.9)); }
+.home .parallax-inner h2 em {
+  /* longhand, not the `background` shorthand — the shorthand would
+     reset background-clip back to border-box and paint a rectangle */
+  background-image: linear-gradient(100deg, var(--flag-red) 6%, var(--flag-blue) 50%, var(--flag-yellow) 94%);
+  /* the h2's text-shadow would paint on top of the clipped gradient,
+     so this one gets a drop-shadow (applied post-clip) instead */
+  text-shadow: none;
+  filter: drop-shadow(0 2px 18px rgba(10, 11, 16, 0.9));
+}
 
 /* the glow section: haze (::before/::after) + particles + cards */
 .home .archive { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
@@ -538,10 +531,7 @@ footer a { color: var(--muted); }
   .reactions main { padding: 44px 6vw 90px; }
 }
 
-/* ============================================================
-   4d. SAFETY & COMPLIANCE (.safety) — docs + sticky checklist
-   Safety gets an amber cast so it reads differently on purpose.
-   ============================================================ */
+/* safety and compliance!!!!!!!! */
 .safety .page-head::before {
   background: radial-gradient(circle, rgba(245, 184, 92, 0.16), rgba(124, 92, 240, 0.18) 45%, transparent 65%);
 }
@@ -624,9 +614,7 @@ footer a { color: var(--muted); }
   .safety .doc .upd { display: none; }
 }
 
-/* ============================================================
-   4e. COMPETITION REPORTS (.reports) — structured post-mortems
-   ============================================================ */
+/* COMP REPORTS */
 .reports main { padding: 70px 8vw 110px; max-width: 1100px; }
 .reports .report {
   border: 1px solid var(--line);

@@ -23,10 +23,10 @@
 <header class="page-head">
   <div class="crumb"><a href="index.html">Archive</a> / <span>Reaction database</span></div>
   <h1>Every reaction we’ve run and retired.</h1>
-  <p class="page-lede">Power sources move the car; stopping reactions kill the motor. Status tells you how much to trust each one: <em>proven</em> has raced, <em>experimental</em> is bench-only, <em>retired</em> DON'T REPEAT HISTORY.</p>
+  <p class="page-lede">Power sources move the car, stopping reactions stops the motor. Keep in mind each status: <em>proven</em> has raced, <em>experimental</em> was or is tested, <em>retired</em> means DONT REPEAT HISTORY.</p>
 </header>
 
-<!-- Filter buttonss -->
+<!-- filter buttonss -->
 <div class="filters" role="group" aria-label="Filter reactions">
   <button class="filter active" data-filter="all">All</button>
   <button class="filter" data-filter="power">Power sources</button>
@@ -43,7 +43,7 @@
       <div class="badges"><span class="badge stop">Stop</span><span class="badge proven">Proven</span></div>
       <h2>Iodine clock (thiosulfate)</h2>
       <div class="eqn">2 S₂O₃²⁻ + I₂ → S₄O₆²⁻ + 2 I⁻  ·  then starch + I₂ → dark</div>
-      <p>Solution goes dark when thiosulfate runs out; a photoresistor sees the change and opens the motor relay. Stop time scales with [S₂O₃²⁻] — the calibration curve is parabolic over our range.</p>
+      <p>Solution goes dark when thiosulfate runs out; a photoresistor sees the change and opens the motor relay. Stop time scales with [S₂O₃²⁻]. The calibration curve is parabolic over our range.</p>
       <div class="meta">Cars: <b>II, III, IV</b> · Calibrate at <b>venue temperature</b> — see 2025 post-mortem</div>
     </article>
 
@@ -59,7 +59,7 @@
       <div class="badges"><span class="badge power">Power</span><span class="badge experimental">Experimental</span></div>
       <h2>Aluminum–air battery</h2>
       <div class="eqn">4 Al + 3 O₂ + 6 H₂O → 4 Al(OH)₃  ·  E°cell ≈ 2.7 V (theor.)</div>
-      <p>Much better energy density than Zn/Cu, which is the whole pitch for Car IV. Real cell voltage sags well below theoretical and the anodes passivate — current bench work is on electrolyte choice and mesh cathodes.</p>
+      <p>Much better energy density than Zn/Cu, which is the whole pitch for Car IV. Real cell voltage sags well below theoretical and the anodes passivate. Current work is on electrolyte choice and mesh cathodes.</p>
       <div class="meta">Car: <b>IV (current)</b> · Bench best: <b>~1.2 V/cell</b> under load</div>
     </article>
 
@@ -67,7 +67,7 @@
       <div class="badges"><span class="badge stop">Stop</span><span class="badge experimental">Experimental</span></div>
       <h2>Vitamin C clock</h2>
       <div class="eqn">ascorbic acid + I₂ → dehydroascorbic + 2 HI</div>
-      <p>A gentler iodine clock variant using ascorbic acid as the reducing agent — cheaper reagents, friendlier EHS profile. Timing is less sharp than thiosulfate so far; the color transition is more gradual, which the photocell dislikes.</p>
+      <p>A gentler iodine clock variant using ascorbic acid as the reducing agent, friendlier EDP profile. Timing is less sharp than thiosulfate so far. The color transition is more gradual, bad for photo receiver.</p>
       <div class="meta">Status: <b>bench only</b> · Needs a threshold circuit, not a simple divider</div>
     </article>
 
@@ -75,21 +75,21 @@
       <div class="badges"><span class="badge power">Power</span><span class="badge retired">Retired</span></div>
       <h2>Pressure car (baking soda + vinegar)</h2>
       <div class="eqn">NaHCO₃ + CH₃COOH → CO₂↑ + H₂O + NaOAc</div>
-      <p>Car I's propulsion. Fun, fast, wildly inconsistent — pressure release depends on mixing, temperature, and luck. Also increasingly constrained by competition pressure-vessel rules. Retired, not forgotten.</p>
+      <p>Car I's propulsion. Fun, fast, wildly inconsistent. Pressure release depends on mixing, temperature, and luck. Also increasingly constrained by competition pressure-vessel rules. Retired.</p>
       <div class="meta">Car: <b>I</b> · Retired <b>2023</b> · Reason: <b>repeatability + rules</b></div>
     </article>
 
     <article class="rx reveal" data-tags="stop retired">
       <div class="badges"><span class="badge stop">Stop</span><span class="badge retired">Retired</span></div>
       <h2>Mechanical timer stop</h2>
-      <div class="eqn">no reaction — wind-up timer opens the circuit</div>
-      <p>Not a reaction at all, which is exactly why it's retired: competition scoring rewards chemical stopping mechanisms, and the timer drifted with spring tension anyway. Kept here so nobody re-proposes it in year one.</p>
+      <div class="eqn">no reaction, wind-up timer opens the circuit</div>
+      <p>Not a reaction at all, which is exactly why it's retired: competition scoring rewards chemical stopping mechanisms, and the timer drifted with spring tension.</p>
       <div class="meta">Car: <b>I</b> · Retired <b>2023</b></div>
     </article>
 
   </div>
   <p class="empty" id="empty">// nothing matches that filter yet — add the first one</p>
-  <p class="hint reveal">// To add a reaction: copy an &lt;article class="rx"&gt; block and set data-tags to a category (power/stop) plus a status (proven/experimental/retired). The filters pick it up automatically.</p>
+  <p class="hint reveal">// To add a reaction: copy an &lt;article class="rx"&gt; block and set data-tags to a category plus a status.</p>
 </main>
 
 <footer>
